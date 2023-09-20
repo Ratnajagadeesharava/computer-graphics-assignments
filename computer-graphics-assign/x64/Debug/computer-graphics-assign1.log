@@ -1,0 +1,3 @@
+﻿  rgba_to_rgb.cpp
+D:\cpp\CSC317\computer-graphics-assign1\src\rgba_to_rgb.cpp(13,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  computer-graphics-assign1.vcxproj -> D:\cpp\CSC317\x64\Debug\computer-graphics-assign1.exe

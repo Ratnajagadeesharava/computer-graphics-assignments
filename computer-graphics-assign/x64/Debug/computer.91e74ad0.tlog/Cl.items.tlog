@@ -1,0 +1,13 @@
+D:\cpp\CSC317\computer-graphics-assign1\computer-graphics-assign1.cpp;D:\cpp\CSC317\computer-graphics-assign1\x64\Debug\computer-graphics-assign1.obj
+D:\cpp\CSC317\computer-graphics-assign1\src\demosaic.cpp;D:\cpp\CSC317\computer-graphics-assign1\x64\Debug\demosaic.obj
+D:\cpp\CSC317\computer-graphics-assign1\src\desaturate.cpp;D:\cpp\CSC317\computer-graphics-assign1\x64\Debug\desaturate.obj
+D:\cpp\CSC317\computer-graphics-assign1\src\hsv_to_rgb.cpp;D:\cpp\CSC317\computer-graphics-assign1\x64\Debug\hsv_to_rgb.obj
+D:\cpp\CSC317\computer-graphics-assign1\src\hue_shift.cpp;D:\cpp\CSC317\computer-graphics-assign1\x64\Debug\hue_shift.obj
+D:\cpp\CSC317\computer-graphics-assign1\src\over.cpp;D:\cpp\CSC317\computer-graphics-assign1\x64\Debug\over.obj
+D:\cpp\CSC317\computer-graphics-assign1\src\reflect.cpp;D:\cpp\CSC317\computer-graphics-assign1\x64\Debug\reflect.obj
+D:\cpp\CSC317\computer-graphics-assign1\src\rgba_to_rgb.cpp;D:\cpp\CSC317\computer-graphics-assign1\x64\Debug\rgba_to_rgb.obj
+D:\cpp\CSC317\computer-graphics-assign1\src\rgb_to_gray.cpp;D:\cpp\CSC317\computer-graphics-assign1\x64\Debug\rgb_to_gray.obj
+D:\cpp\CSC317\computer-graphics-assign1\src\rgb_to_hsv.cpp;D:\cpp\CSC317\computer-graphics-assign1\x64\Debug\rgb_to_hsv.obj
+D:\cpp\CSC317\computer-graphics-assign1\src\rotate.cpp;D:\cpp\CSC317\computer-graphics-assign1\x64\Debug\rotate.obj
+D:\cpp\CSC317\computer-graphics-assign1\src\simulate_bayer_mosaic.cpp;D:\cpp\CSC317\computer-graphics-assign1\x64\Debug\simulate_bayer_mosaic.obj
+D:\cpp\CSC317\computer-graphics-assign1\src\write_ppm.cpp;D:\cpp\CSC317\computer-graphics-assign1\x64\Debug\write_ppm.obj
