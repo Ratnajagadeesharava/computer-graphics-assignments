@@ -70,10 +70,10 @@ int main(int argc,char *argv[])
     reflect(rgb, width, height, 3, reflected);
     write_ppm("reflected.ppm", reflected, width, height, 3);
 
-    //// Rotation
-    //std::vector<unsigned char> rotated;
-    //rotate(rgb, width, height, 3, rotated);
-    //write_ppm("rotated.ppm", rotated, height, width, 3);
+    // Rotation
+    std::vector<unsigned char> rotated;
+    rotate(rgb, width, height, 3, rotated);
+    write_ppm("rotated.ppm", rotated, height, width, 3);
 
     //// Convert to gray
     //std::vector<unsigned char> gray;
