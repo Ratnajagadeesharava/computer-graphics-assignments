@@ -12,10 +12,11 @@
 #include "includes/desaturate.h"
 #include "includes/hue_shift.h"
 #include "includes/demosaic.h"
+
 #include <vector>
 #include <iostream>
 #define STB_IMAGE_IMPLEMENTATION
-#include <stb_image.h>
+#include "includes/stb_image.h"
 inline bool read_rgba_from_png(
     const std::string& filename,
     std::vector<unsigned char>& rgba,
