@@ -18,14 +18,7 @@ void rgba_to_rgb(
   int j = 0;
   for (int i = 0; i < rgbaSize; i++) {
 	  if ((i + 1) % 4 != 0) {
-		  /*int a = (int)(rgba[i]);
-		  if (a <= 100)
-		  {
-			  rgb[j] = 255;
-		  }
-		  else{
-			  rgb[j] = rgba[i];
-		  }*/
+
 		   rgb[j] = rgba[i];
 		  j++;
 	  }

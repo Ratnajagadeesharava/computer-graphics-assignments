@@ -75,10 +75,10 @@ int main(int argc,char *argv[])
     rotate(rgb, width, height, 3, rotated);
     write_ppm("rotated.ppm", rotated, height, width, 3);
 
-    //// Convert to gray
-    //std::vector<unsigned char> gray;
-    //rgb_to_gray(rgb, width, height, gray);
-    //write_ppm("gray.ppm", gray, width, height, 1);
+    // Convert to gray
+    std::vector<unsigned char> gray;
+    rgb_to_gray(rgb, width, height, gray);
+    write_ppm("gray.ppm", gray, width, height, 1);
 
     //// Create fake bayer mosaic image
     //std::vector<unsigned char> bayer;

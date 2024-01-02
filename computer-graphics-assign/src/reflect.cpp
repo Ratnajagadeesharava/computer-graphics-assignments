@@ -10,9 +10,6 @@ void reflect(
   std::vector<unsigned char> & reflected)
 {
   reflected.resize(width*height*num_channels);
-  ////////////////////////////////////////////////////////////////////////////
-  // Add your code here
-  ////////////////////////////////////////////////////////////////////////////
   vector<vector<vector<unsigned char>>> storage;
   storage.resize(height);
   int l = height * width;
