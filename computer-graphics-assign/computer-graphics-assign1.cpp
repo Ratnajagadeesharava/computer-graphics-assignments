@@ -12,7 +12,7 @@
 #include "includes/desaturate.h"
 #include "includes/hue_shift.h"
 #include "includes/demosaic.h"
-
+using namespace std;
 #include <vector>
 #include <iostream>
 #define STB_IMAGE_IMPLEMENTATION
@@ -36,10 +36,65 @@ inline bool read_rgba_from_png(
     std::copy(rgba_raw, rgba_raw + height * width * 4, std::back_inserter(rgba));
     return true;
 }
+
+void printVec(std::vector<unsigned int>& temp) {
+    int l = temp.size()/5 ;
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < l; j++) {
+            int a = temp[i * l + j];
+            if (a <= 9)
+                std::cout << 0;
+            std::cout << temp[i*l+j] << " ";
+        }
+        std::cout << std::endl;
+    }
+}
+
+void samplemosaic(const std::vector<unsigned int>& rgb,
+    const int& width,
+    const int& height,
+    std::vector<unsigned int>& bayer) {
+    vector<vector<unsigned int>> tempStorage;
+    tempStorage.resize(width * height);
+    int c = 0;
+    for (int i = 0; i < height * width * 3; i = i + 3) {
+        vector<unsigned int> rgb3d;
+        rgb3d.resize(3);
+        rgb3d[0] = rgb[i];
+        rgb3d[1] = rgb[i+1];
+        rgb3d[2] = rgb[i+2];
+        tempStorage[c] = rgb3d;
+        c++;
+    }
+
+
+    bool flag = false;
+    
+    for (int i = 0; i < height * width; i++) {
+        if (!flag) {
+            int a = tempStorage[i][1];
+            bayer[i] = a;
+        }
+    }
+
+}
+
 int main(int argc,char *argv[])
 {
     std::vector<std::string> input_filenames(argv + 1, argv + argc);
     int num_inputs = argc - 1;
+    std::vector<unsigned int> tempVec;
+    tempVec.resize(90);
+    for (int i = 0; i < 90; i++) {
+        tempVec[i] = i+1 ;
+    }
+
+    printVec(tempVec);
+    std::vector<unsigned int> sbayer;
+    sbayer.resize(30);
+    samplemosaic(tempVec, 6, 5, sbayer);
+
+    printVec(sbayer);
 
     if (num_inputs == 0)
     {
@@ -62,28 +117,28 @@ int main(int argc,char *argv[])
     std::vector<unsigned char> rgb;
     rgba_to_rgb(rgba, width, height, rgb);
 
-    // Write to .ppm file format
-    write_ppm("rgb.ppm", rgb, width, height, 3);
+    //// Write to .ppm file format
+    //write_ppm("rgb.ppm", rgb, width, height, 3);
 
-    // Reflection
-    std::vector<unsigned char> reflected;
-    reflect(rgb, width, height, 3, reflected);
-    write_ppm("reflected.ppm", reflected, width, height, 3);
+    //// Reflection
+    //std::vector<unsigned char> reflected;
+    //reflect(rgb, width, height, 3, reflected);
+    //write_ppm("reflected.ppm", reflected, width, height, 3);
 
-    // Rotation
-    std::vector<unsigned char> rotated;
-    rotate(rgb, width, height, 3, rotated);
-    write_ppm("rotated.ppm", rotated, height, width, 3);
+    //// Rotation
+    //std::vector<unsigned char> rotated;
+    //rotate(rgb, width, height, 3, rotated);
+    //write_ppm("rotated.ppm", rotated, height, width, 3);
 
-    // Convert to gray
-    std::vector<unsigned char> gray;
-    rgb_to_gray(rgb, width, height, gray);
-    write_ppm("gray.ppm", gray, width, height, 1);
+    //// Convert to gray
+    //std::vector<unsigned char> gray;
+    //rgb_to_gray(rgb, width, height, gray);
+    //write_ppm("gray.ppm", gray, width, height, 1);
 
-    //// Create fake bayer mosaic image
-    //std::vector<unsigned char> bayer;
-    //simulate_bayer_mosaic(rgb, width, height, bayer);
-    //write_ppm("bayer.ppm", bayer, width, height, 1);
+    // Create fake bayer mosaic image
+    std::vector<unsigned char> bayer;
+    simulate_bayer_mosaic(rgb, width, height, bayer);
+    write_ppm("bayer.ppm", bayer, width, height, 1);
 
     //// Demosaic that output
     //std::vector<unsigned char> demosaicked;
