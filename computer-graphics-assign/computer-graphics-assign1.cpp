@@ -140,15 +140,15 @@ int main(int argc,char *argv[])
     simulate_bayer_mosaic(rgb, width, height, bayer);
     write_ppm("bayer.ppm", bayer, width, height, 1);
 
-    //// Demosaic that output
-    //std::vector<unsigned char> demosaicked;
-    //demosaic(bayer, width, height, demosaicked);
-    //write_ppm("demosaicked.ppm", demosaicked, width, height, 3);
+    // Demosaic that output
+    /*std::vector<unsigned char> demosaicked;
+    demosaic(bayer, width, height, demosaicked);
+    write_ppm("demosaicked.ppm", demosaicked, width, height, 3);*/
 
-    //// Shift the hue of the image by 180°
-    //std::vector<unsigned char> shifted;
-    //hue_shift(rgb, width, height, 180.0, shifted);
-    //write_ppm("shifted.ppm", shifted, width, height, 3);
+    // shift the hue of the image by 180°
+    std::vector<unsigned char> shifted;
+    hue_shift(rgb, width, height, 180.0, shifted);
+    write_ppm("shifted.ppm", shifted, width, height, 3);
 
     //// Partially desaturate an image by 25%
     //std::vector<unsigned char> desaturated;
